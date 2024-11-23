@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740038928719",
+    "project_id": "fitnessapp-5a303",
+    "storage_bucket": "fitnessapp-5a303.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740038928719:android:b0284924d62974962d7d3a",
+        "android_client_info": {
+          "package_name": "fr.adel.fitnessapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu8cgLmCZLxF1qNDZ4xUMViIIJOs76yHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
