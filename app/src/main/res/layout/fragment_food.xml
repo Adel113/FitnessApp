@@ -1,0 +1,95 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#000000"> <!-- Fond noir -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:clipToPadding="false"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bienvenue dans l'outil de recherche alimentaire. Entrez le nom d'un aliment pour obtenir des informations nutritionnelles détaillées."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:id="@+id/food_name_input"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_radius"
+                android:hint="Entrez un aliment"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#B0B0B0"
+                android:textSize="16sp"
+                android:importantForAccessibility="yes"
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Rechercher"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:background="@drawable/border_radius"
+                android:padding="16dp"
+                android:textAllCaps="false"
+                android:importantForAccessibility="yes"
+                android:contentDescription="Bouton de recherche"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewApi"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border_radius"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:scrollbars="vertical" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDatabase"
+            android:layout_width="411dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_radius"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:scrollbars="vertical"
+            android:layout_weight="5"/>
+
+    </LinearLayout>
+</ScrollView>

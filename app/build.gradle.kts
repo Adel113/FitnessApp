@@ -56,10 +56,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.google.android.material:material:1.6.1")
     // CardView
     implementation(libs.cardview)
+    implementation("com.github.bumptech.glide:glide:4.15.1")
 
     implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("com.google.code.gson:gson:2.10.1")
 
 
     // Retrofit pour faire les appels API

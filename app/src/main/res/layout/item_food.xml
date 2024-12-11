@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-    <!-- Champ de saisie de l'aliment -->
-    <EditText
-        android:id="@+id/food_name_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Entrez un aliment"
-        android:inputType="text"
-        android:padding="16dp"
+    <!-- Image de la nourriture -->
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
         android:layout_marginBottom="8dp" />
 
-    <!-- Bouton de recherche avec des marges et une taille minimum -->
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rechercher"
-        android:layout_marginBottom="16dp"
-        android:minHeight="48dp"
-        android:padding="8dp" />
-
-    <!-- RecyclerView pour afficher les résultats -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false" />
-
+    <!-- Nom de la nourriture -->
     <TextView
         android:id="@+id/food_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom de l'aliment"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textColor="#000000"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/border_radius" /> <!-- Applique la bordure arrondie -->
 
     <!-- Calories -->
     <TextView
         android:id="@+id/calories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calories: 0"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/border_radius" /> <!-- Applique la bordure arrondie -->
 
     <!-- Protéines -->
     <TextView
         android:id="@+id/protein"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Protéines: 0g"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/border_radius" /> <!-- Applique la bordure arrondie -->
+
+    <!-- Carbohydrates -->
+    <TextView
+        android:id="@+id/Carbohydrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:background="@drawable/border_radius" /> <!-- Applique la bordure arrondie -->
+
 </LinearLayout>

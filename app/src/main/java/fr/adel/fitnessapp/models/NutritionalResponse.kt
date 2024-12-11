@@ -6,9 +6,15 @@ data class NutritionalResponse(
 
 data class FoodItem(
     val food_name: String,
-    val brand_name: String?,
     val nf_calories: Float,
     val nf_protein: Float,
-    val nf_carbohydrate: Float,
-    val nf_fat: Float
+    val nf_total_carbohydrate: Float,
+    val photo: FoodPhoto // Modèle pour gérer l'image
 )
+
+data class FoodPhoto(
+    val thumb: String // URL de l'image
+)
+
+
+
