@@ -19,6 +19,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    viewBinding{
+        enable = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -39,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+    implementation(platform(libs.firebase.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,8 +52,27 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("androidx.cardview:cardview:1.0.0")
+    // CardView
+    implementation(libs.cardview)
+
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+
+
+    // Retrofit pour faire les appels API
+    implementation(libs.retrofit)
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // OkHttp pour les interceptors (utile pour ajouter des entêtes)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
+    // Gson pour convertir les réponses JSON
+    implementation(libs.gson)
+
+    // Material Design
+    implementation(libs.material)
+
 }
