@@ -41,6 +41,8 @@ class FoodFragment : Fragment() {
         // Initialisation des RecyclerViews et des adaptateurs
         recyclerViewApi = view.findViewById(R.id.recyclerViewApi)
         recyclerViewDatabase = view.findViewById(R.id.recyclerViewDatabase)
+
+
         foodNameInput = view.findViewById(R.id.food_name_input)
         searchButton = view.findViewById(R.id.search_button)
 
@@ -53,7 +55,6 @@ class FoodFragment : Fragment() {
         recyclerViewApi.adapter = apiAdapter
         recyclerViewDatabase.adapter = databaseAdapter
 
-        // Recherche sur le bouton
 
 
         // Charger les données de la base de données locale

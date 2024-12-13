@@ -30,23 +30,24 @@ class ExerciseAdapter : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val item = exerciseItems[position]
-        holder.bind(item)
+        holder.exerciseName.text = item.name
+        holder.exerciseCalories.text = "Calories: ${item.nf_calories} kcal"
+        holder.exerciseDuration.text = "Duration: ${item.duration_min} min"
+
+        Glide.with(holder.itemView.context)
+            .load(item.photo.thumb)
+            .into(holder.exerciseImage)
     }
 
     override fun getItemCount() = exerciseItems.size
 
-    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+   class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val exerciseName: TextView = itemView.findViewById(R.id.exercise_name)
-        private val exerciseCalories: TextView = itemView.findViewById(R.id.exercise_calories)
-        private val exerciseDuration: TextView = itemView.findViewById(R.id.exercise_duration)
-        private val exerciseImage: ImageView = itemView.findViewById(R.id.exercise_image)
+        val exerciseName: TextView = itemView.findViewById(R.id.exercise_name)
+        val exerciseCalories: TextView = itemView.findViewById(R.id.exercise_calories)
+        val exerciseDuration: TextView = itemView.findViewById(R.id.exercise_duration)
+        val exerciseImage: ImageView = itemView.findViewById(R.id.exercise_image)
 
-        fun bind(item: Exerciseitem) {
-            exerciseName.text = item.name
-            exerciseCalories.text = "Calories: ${item.nf_calories} kcal"
-            exerciseDuration.text = "Duration: ${item.duration_min} min"
-            Glide.with(itemView.context).load(item.photo.thumb).into(exerciseImage)
-        }
+
     }
 }

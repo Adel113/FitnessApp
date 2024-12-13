@@ -81,7 +81,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewDatabase"
-            android:layout_width="411dp"
+            android:layout_width="349dp"
             android:layout_height="500dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
