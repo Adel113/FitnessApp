@@ -34,36 +34,28 @@
 
             <EditText
                 android:id="@+id/food_name_input"
-                android:layout_width="230dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/border_radius"
-                android:hint="Entrez un aliment"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#B0B0B0"
+                android:hint="Entrez un exercice"
+                android:background="#ffffff"
+                android:backgroundTint="@color/white"
+                android:textColor="@android:color/black"
+                android:padding="16dp"
                 android:textSize="16sp"
-                android:importantForAccessibility="yes"
-                android:padding="16dp"/>
+                android:importantForAccessibility="yes"/>
 
             <Button
                 android:id="@+id/search_button"
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rechercher"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:background="@drawable/border_radius"
-                android:padding="16dp"
                 android:textAllCaps="false"
                 android:importantForAccessibility="yes"
-                android:contentDescription="Bouton de recherche"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginLeft="16dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@android:color/black"
+                />
 
         </LinearLayout>
 
@@ -74,7 +66,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/border_radius"
             android:clipToPadding="false"
             android:padding="16dp"
             android:scrollbars="vertical" />
@@ -85,7 +76,6 @@
             android:layout_height="500dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:background="@drawable/border_radius"
             android:clipToPadding="false"
             android:padding="16dp"
             android:scrollbars="vertical"

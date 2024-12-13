@@ -70,30 +70,31 @@ class AuthActivity : AppCompatActivity() {
 
                 }
             }else{
-                singIn(email, password)
+                signIn(email, password)
             }
 
 
         }
     }
 
-    fun singIn(email: String, password: String){
-        Log.d("singIn", "singIn user.....")
+    fun signIn(email: String, password: String) {
+        Log.d("signIn", "Sign in user.....")
 
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{ task->
-            if (task.isSuccessful){
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
                 Intent(this, HomeActivity::class.java).also {
                     startActivity(it)
                 }
                 finish()
-            }else{
-                InputLayoutPassword.error = "failed"
+            } else {
+                val errorMessage = task.exception?.localizedMessage ?: "Authentication failed"
+                Log.e("signIn", errorMessage)
+                InputLayoutPassword.error = errorMessage
                 InputLayoutPassword.isErrorEnabled = true
                 InputLayoutEmail.isErrorEnabled = true
             }
-
         }
 
-
     }
+
 }

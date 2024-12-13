@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,121 +7,137 @@
     android:layout_height="match_parent"
     tools:context=".activities.RegisterActivity">
 
+    <!-- Toolbar avec logo et bouton retour -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:layout_height="56dp"
+        android:background="?android:attr/windowBackground"
+        android:titleTextColor="#FFFFFF"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:title="Créer un compte"
+        android:layout_alignParentTop="true">
 
-        app:titleTextColor="@color/white" />
+        <!-- Logo à gauche -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/logoprincipal"
+            android:contentDescription="Logo"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="16dp" />
+
+        <!-- Bouton retour à droite -->
+        <ImageButton
+            android:id="@+id/retour_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Retour"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginEnd="16dp" />
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- ImageView en arrière-plan -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.4"
+        android:alpha="1"
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
-    <!-- LinearLayout avec des contraintes -->
+    <!-- LinearLayout avec des champs d'inscription -->
     <LinearLayout
-        android:layout_marginTop="250dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar2"
         android:orientation="vertical"
-        android:layout_gravity ="center"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_gravity="center">
 
-        <!-- Ajoute tes enfants ici -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logoprincipal" />
 
-
+        <!-- Champ nom -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextInputName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_marginTop="24dp"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/white"
-
+            android:layout_marginTop="24dp"
             android:hint="Full name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxBackgroundColor="@color/white">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:inputType="textEmailAddress"
-                android:layout_height="wrap_content">
-
-            </com.google.android.material.textfield.TextInputEditText>
-
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
+        <!-- Champ email -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextInputEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:boxBackgroundColor="@color/white"
             android:hint="Email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxBackgroundColor="@color/white">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:inputType="textEmailAddress"
-                android:layout_height="wrap_content">
-            </com.google.android.material.textfield.TextInputEditText>
-
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
+        <!-- Champ mot de passe -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextInputPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/white"
             android:layout_marginTop="24dp"
             android:hint="Password"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxBackgroundColor="@color/white"
+            app:passwordToggleEnabled="true">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword">
-            </com.google.android.material.textfield.TextInputEditText>
-
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Champ confirmer mot de passe -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextInputConfirmPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/white"
             android:layout_marginTop="24dp"
             android:hint="Confirm Password"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:boxBackgroundColor="@color/white"
+            app:passwordToggleEnabled="true">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword">
-            </com.google.android.material.textfield.TextInputEditText>
-
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <!-- Bouton d'inscription -->
+        <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
+            android:backgroundTint="@color/black"
             android:text="Register"
+            android:textColor="@android:color/white"
             app:cornerRadius="10dp" />
-
-
     </LinearLayout>
-
-
 </RelativeLayout>

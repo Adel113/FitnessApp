@@ -25,19 +25,22 @@
             android:id="@+id/logo"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/logo"
-        android:contentDescription="Logo"
-        android:layout_gravity="start|center_vertical" />
+            android:src="@drawable/logoprincipal"
+            android:contentDescription="Logo"
+            android:layout_gravity="start|center_vertical" />
 
         <!-- Bouton de déconnexion à droite -->
-        <ImageButton
+        <Button
             android:id="@+id/logout_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/logo"
-        android:contentDescription="Déconnexion"
-        android:layout_gravity="end|center_vertical"
-        android:background="?android:attr/selectableItemBackgroundBorderless" />
+            android:padding="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Deconexion"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end|center_vertical"
+            />
     </androidx.appcompat.widget.Toolbar>
 
 
