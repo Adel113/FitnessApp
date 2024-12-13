@@ -8,11 +8,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import fr.adel.fitnessapp.R
 import fr.adel.fitnessapp.adapters.ExerciseAdapter
 import fr.adel.fitnessapp.models.ExerciseResponse
+import fr.adel.fitnessapp.models.Exerciseitem
 import fr.adel.fitnessapp.models.QueryRequest
 import fr.adel.fitnessapp.network.RetrofitClient
 import retrofit2.Call
@@ -21,32 +24,49 @@ import retrofit2.Response
 
 class ExerciseFragment : Fragment() {
 
-    private lateinit var exerciseAdapter: ExerciseAdapter // Adaptateur pour les exercices
+    private lateinit var recyclerViewApiEX: RecyclerView
+    private lateinit var recyclerViewDatabaseEX: RecyclerView
+    private lateinit var apiAdapter: ExerciseAdapter
+    private lateinit var databaseAdapter: ExerciseAdapter
+
+
+
     private lateinit var exerciseNameInput: EditText // Champ de recherche pour l'exercice
     private lateinit var searchExerciseButton: Button // Bouton de recherche pour les exercices
+
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_exercise, container, false)
+
+        recyclerViewApiEX = view.findViewById(R.id.recyclerViewApiEX)
+        recyclerViewDatabaseEX = view.findViewById(R.id.recyclerViewDatabaseEX)
+
         exerciseNameInput = view.findViewById(R.id.exercise_name_input) // Initialisation champ exercice
         searchExerciseButton = view.findViewById(R.id.search_exercise_button) // Initialisation bouton exercice
 
+        recyclerViewApiEX.layoutManager = LinearLayoutManager(context)
+        recyclerViewDatabaseEX.layoutManager = GridLayoutManager(context, 2)
 
-        // RecyclerView pour les exercices (ajoute une nouvelle RecyclerView si besoin)
-        val exerciseRecyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_exercises)
-        exerciseRecyclerView.layoutManager = LinearLayoutManager(context)
-        exerciseAdapter = ExerciseAdapter()
-        exerciseRecyclerView.adapter = exerciseAdapter
+        apiAdapter = ExerciseAdapter()
+        databaseAdapter = ExerciseAdapter()
 
+        recyclerViewApiEX.adapter = apiAdapter
+        recyclerViewDatabaseEX.adapter = databaseAdapter
 
+        // Charger les données de la base de données locale
+        val localExerciseItems = loadLocalExerciseData()
+        databaseAdapter.setExerciseItems(localExerciseItems)
         searchExerciseButton.setOnClickListener {
             val query = exerciseNameInput.text.toString()
             if (query.isNotBlank()) {
                 fetchExerciseData(query)
             } else {
-                Toast.makeText(context, "Veuillez entrer un exercice", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Veuillez entrer un aliment", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -64,7 +84,7 @@ class ExerciseFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     val exercises = response.body()?.exercises ?: listOf()
-                    exerciseAdapter.setExerciseItems(exercises)
+                    apiAdapter.setExerciseItems(exercises)
                 } else {
                     Toast.makeText(context, "Erreur API : ${response.code()}", Toast.LENGTH_SHORT).show()
                 }
@@ -75,4 +95,13 @@ class ExerciseFragment : Fragment() {
             }
         })
     }
+
+    private fun loadLocalExerciseData(): List<Exerciseitem> {
+        val json = context?.assets?.open("exercices.json")?.bufferedReader().use { it?.readText() }
+        val gson = Gson()
+        return gson.fromJson(json, Array<Exerciseitem>::class.java).toList()
+    }
+
+
+
 }

@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="#000000"> <!-- Fond noir -->
 
-    <!-- Section de recherche pour les exercices -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:padding="24dp"
         android:gravity="center"
-        android:layout_marginTop="20dp">
+        android:clipToPadding="false"
+        android:weightSum="1">
 
-        <EditText
-            android:id="@+id/exercise_name_input"
-            android:layout_width="0dp"
+        <!-- Section de recherche pour les exercices -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Entrez un exercice"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#B0B0B0"
-            android:background="@drawable/edittext_style"
-            android:padding="16dp"
-            android:textSize="16sp"
-            android:importantForAccessibility="yes" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
 
-        <Button
-            android:id="@+id/search_exercise_button"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/exercise_name_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Entrez un exercice"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:background="#ffffff"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:importantForAccessibility="yes" />
+
+            <Button
+                android:id="@+id/search_exercise_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rechercher"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:background="#000000"
+                android:padding="16dp"
+                android:textAllCaps="false"
+                android:importantForAccessibility="yes"
+                android:layout_marginLeft="16dp"
+                android:contentDescription="Bouton de recherche pour l'exercice" />
+
+        </LinearLayout>
+
+        <!-- RecyclerView pour afficher les exercices -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewApiEX"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:text="Rechercher"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:background="#FF6A13"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:clipToPadding="false"
             android:padding="16dp"
-            android:textAllCaps="false"
-            android:importantForAccessibility="yes"
-            android:layout_marginLeft="16dp"
-            android:contentDescription="Bouton de recherche pour l'exercice" />
+            android:scrollbars="vertical" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDatabaseEX"
+            android:layout_width="349dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_weight="5"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
-    <!-- RecyclerView pour afficher les exercices -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_exercises"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="20dp"
-        android:clipToPadding="false"
-        android:scrollbars="vertical"
-        android:padding="16dp"/>
-</LinearLayout>
+
+</ScrollView>
+
+
+
+

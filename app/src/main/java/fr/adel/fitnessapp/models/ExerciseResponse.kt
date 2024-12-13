@@ -5,7 +5,6 @@ data class ExerciseResponse(
 )
 
 data class Exerciseitem(
-    val user_input: String,
     val duration_min: Int,
     val nf_calories: Double,
     val photo: Photo,

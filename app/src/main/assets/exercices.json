@@ -1,15 +1,274 @@
-{
-  "exercices": [
-    {
-      "nom": "Pompes",
-      "photo": "https://d2xdmhkmkbyw75.cloudfront.net/exercise//63_highres.jpg"
-    },
-    {
-      "nom": "Squats",
-      "photo": "https://d2xdmhkmkbyw75.cloudfront.net/exercise//63_highres.jpg"
+[
+  {
+    "name": "swimming",
+    "nf_calories": 400,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg/330px-40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg"
     }
-  ]
-}
-
-
-
+  },
+  {
+    "name": "running",
+    "nf_calories": 600,
+    "duration_min": 45,
+    "photo": {
+      "thumb": "https://media.istockphoto.com/id/123456789/photo/running.jpg"
+    }
+  },
+  {
+    "name": "cycling",
+    "nf_calories": 450,
+    "duration_min": 50,
+    "photo": {
+      "thumb": "https://media.istockphoto.com/id/123456789/photo/running.jpg"
+    }
+  },
+  {
+    "name": "basketball",
+    "nf_calories": 300,
+    "duration_min": 30,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+    }
+  },
+  {
+    "name": "soccer",
+    "nf_calories": 500,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Soccer_ball.svg"
+    }
+  },
+  {
+    "name": "yoga",
+    "nf_calories": 200,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Yoga_poses.jpg"
+    }
+  },
+  {
+    "name": "tennis",
+    "nf_calories": 350,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/41/Tennis_ball.jpg"
+    }
+  },
+  {
+    "name": "badminton",
+    "nf_calories": 300,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/90/Badminton_racket.jpg"
+    }
+  },
+  {
+    "name": "rowing",
+    "nf_calories": 500,
+    "duration_min": 45,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Rowing.jpg"
+    }
+  },
+  {
+    "name": "skiing",
+    "nf_calories": 400,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Skiing.jpg"
+    }
+  },
+  {
+    "name": "climbing",
+    "nf_calories": 450,
+    "duration_min": 45,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Climbing.jpg"
+    }
+  },
+  {
+    "name": "hiking",
+    "nf_calories": 400,
+    "duration_min": 90,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Hiking.jpg"
+    }
+  },
+  {
+    "name": "boxing",
+    "nf_calories": 650,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Boxing.jpg"
+    }
+  },
+  {
+    "name": "kickboxing",
+    "nf_calories": 700,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Kickboxing.jpg"
+    }
+  },
+  {
+    "name": "dancing",
+    "nf_calories": 350,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/05/Dancing.jpg"
+    }
+  },
+  {
+    "name": "pilates",
+    "nf_calories": 250,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pilates.jpg"
+    }
+  },
+  {
+    "name": "weightlifting",
+    "nf_calories": 300,
+    "duration_min": 45,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Weightlifting.jpg"
+    }
+  },
+  {
+    "name": "crossfit",
+    "nf_calories": 600,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Crossfit.jpg"
+    }
+  },
+  {
+    "name": "skateboarding",
+    "nf_calories": 350,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Skateboarding.jpg"
+    }
+  },
+  {
+    "name": "surfing",
+    "nf_calories": 250,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/55/Surfing.jpg"
+    }
+  },
+  {
+    "name": "karate",
+    "nf_calories": 500,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/80/Karate.jpg"
+    }
+  },
+  {
+    "name": "judo",
+    "nf_calories": 550,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Judo.jpg"
+    }
+  },
+  {
+    "name": "aerobics",
+    "nf_calories": 450,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Aerobics.jpg"
+    }
+  },
+  {
+    "name": "table tennis",
+    "nf_calories": 200,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/31/Table_tennis.jpg"
+    }
+  },
+  {
+    "name": "fencing",
+    "nf_calories": 400,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Fencing.jpg"
+    }
+  },
+  {
+    "name": "ice skating",
+    "nf_calories": 300,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/97/Ice_skating.jpg"
+    }
+  },
+  {
+    "name": "snowboarding",
+    "nf_calories": 400,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/24/Snowboarding.jpg"
+    }
+  },
+  {
+    "name": "horse riding",
+    "nf_calories": 250,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/42/Horse_riding.jpg"
+    }
+  },
+  {
+    "name": "golf",
+    "nf_calories": 200,
+    "duration_min": 90,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Golf.jpg"
+    }
+  },
+  {
+    "name": "cricket",
+    "nf_calories": 300,
+    "duration_min": 90,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Cricket.jpg"
+    }
+  },
+  {
+    "name": "rugby",
+    "nf_calories": 700,
+    "duration_min": 80,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rugby.jpg"
+    }
+  },
+  {
+    "name": "american football",
+    "nf_calories": 650,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/25/American_football.jpg"
+    }
+  },
+  {
+    "name": "volleyball",
+    "nf_calories": 300,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/67/Volleyball.jpg"
+    }
+  },
+  {
+    "name": "handball",
+    "nf_calories": 500,
+    "duration_min": 60,
+    "photo": {
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Handball.jpg"
+    }
+  }
+]
