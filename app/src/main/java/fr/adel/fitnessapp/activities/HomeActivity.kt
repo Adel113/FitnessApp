@@ -1,10 +1,12 @@
 package fr.adel.fitnessapp.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import fr.adel.fitnessapp.R
 import fr.adel.fitnessapp.fragments.HomeFragment
 import fr.adel.fitnessapp.fragments.ExerciseFragment
@@ -13,13 +15,22 @@ import fr.adel.fitnessapp.fragments.CreateProgramFragment
 
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var logoutButton: Button
+    private lateinit var auth: FirebaseAuth  // Déclaration de FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        // Initialiser FirebaseAuth
+        auth = FirebaseAuth.getInstance()
+
         // Initialiser le Toolbar sans texte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        // Initialisation du bouton de déconnexion
+        logoutButton = findViewById(R.id.logout_button)
 
         // Désactiver l'affichage du titre dans le Toolbar
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -45,8 +56,7 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        // Gestion du bouton de déconnexion dans le Toolbar
-        val logoutButton: ImageButton = findViewById(R.id.logout_button)
+        // Gestion du bouton de déconnexion
         logoutButton.setOnClickListener {
             logoutUser()
         }
@@ -54,6 +64,11 @@ class HomeActivity : AppCompatActivity() {
 
     // Méthode pour déconnecter l'utilisateur
     private fun logoutUser() {
-        // Implémenter la logique de déconnexion ici (par exemple, effacer les préférences, rediriger vers l'écran de connexion, etc.)
+        auth.signOut()
+
+        // Rediriger l'utilisateur vers l'écran de connexion après la déconnexion
+        val intent = Intent(this, AuthActivity::class.java)
+        startActivity(intent)
+        finish()  // Ferme l'activité actuelle pour que l'utilisateur ne puisse pas revenir en arrière
     }
 }
