@@ -3,10 +3,13 @@ package fr.adel.fitnessapp.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import fr.adel.fitnessapp.R
 import fr.adel.fitnessapp.fragments.HomeFragment
 import fr.adel.fitnessapp.fragments.ExerciseFragment
@@ -16,31 +19,36 @@ import fr.adel.fitnessapp.fragments.CreateProgramFragment
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var logoutButton: Button
-    private lateinit var auth: FirebaseAuth  // Déclaration de FirebaseAuth
+    private lateinit var textuser: TextView
+    private lateinit var toolbar: Toolbar
+    private lateinit var auth: FirebaseAuth // FirebaseAuth instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Initialiser FirebaseAuth
+        // Initialize FirebaseAuth
         auth = FirebaseAuth.getInstance()
 
-        // Initialiser le Toolbar sans texte
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        // Initialize Toolbar without title
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // Initialisation du bouton de déconnexion
-        logoutButton = findViewById(R.id.logout_button)
-
-        // Désactiver l'affichage du titre dans le Toolbar
+        // Disable title display in Toolbar
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        // Afficher le fragment par défaut (Accueil)
+        // Initialize TextView for username display
+        textuser = findViewById(R.id.textuser)
+
+        // Initialize logout button
+        logoutButton = findViewById(R.id.logout_button)
+
+        // Display default fragment (Home)
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_fragment_container, HomeFragment())
             .commit()
 
-        // Gestion des clics sur la barre de navigation
+        // Handle navigation bar clicks
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener { item ->
             val selectedFragment = when (item.itemId) {
@@ -56,19 +64,41 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        // Gestion du bouton de déconnexion
+        // Handle logout button click
         logoutButton.setOnClickListener {
             logoutUser()
         }
+
+        // Check if user is logged in and load their username
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            loadUserName(currentUser.uid)
+        } else {
+            Toast.makeText(this, "Utilisateur non connecté.", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    // Méthode pour déconnecter l'utilisateur
+    private fun loadUserName(userId: String) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users").document(userId).get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val name = document.getString("fullnam")
+                    textuser.text = "$name"
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Impossible de charger le nom d'utilisateur.", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    // Method to log out the user
     private fun logoutUser() {
         auth.signOut()
 
-        // Rediriger l'utilisateur vers l'écran de connexion après la déconnexion
+        // Redirect user to the login screen after logout
         val intent = Intent(this, AuthActivity::class.java)
         startActivity(intent)
-        finish()  // Ferme l'activité actuelle pour que l'utilisateur ne puisse pas revenir en arrière
+        finish() // Close current activity to prevent back navigation
     }
 }

@@ -43,10 +43,14 @@
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btn_save_program"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="9dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end|center_vertical"
             android:text="Enregistrer le programme" />
 
         <!-- RecyclerView ajouté pour afficher la liste des programmes -->
