@@ -45,7 +45,7 @@
         android:layout_height="match_parent"
         android:alpha="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:background="@color/black"/>
 
     <!-- LinearLayout avec des champs d'inscription -->
     <LinearLayout
@@ -75,6 +75,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border_radius"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,6 +92,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border_radius"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,10 +101,10 @@
             android:id="@+id/layoutTextInputPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
+            android:background="@drawable/border_radius"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:hint="Password"
-            app:boxBackgroundColor="@color/white"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -116,6 +118,7 @@
             android:id="@+id/layoutTextInputConfirmPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:hint="Confirm Password"
@@ -125,19 +128,22 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border_radius"
+
+                app:cornerRadius="100dp"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Bouton d'inscription -->
+
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:text="Register"
-            android:textColor="@android:color/white"
-            app:cornerRadius="10dp" />
+            android:textColor="@android:color/black"
+            />
     </LinearLayout>
 </RelativeLayout>
