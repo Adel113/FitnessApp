@@ -14,6 +14,17 @@
         android:clipToPadding="false"
         android:weightSum="1">
 
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bienvenue dans l'outil de recherche alimentaire. Entrez le nom d'un aliment pour obtenir des informations nutritionnelles détaillées."
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
         <!-- Section de recherche pour les exercices -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,9 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/border_radius"
-
                 android:hint="Entrez un exercice"
-
                 android:backgroundTint="@color/white"
                 android:textColor="@android:color/black"
                 android:padding="16dp"
