@@ -3,57 +3,63 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:dividerPadding="8dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/program_name_layout"
+        <!-- Champ pour le nom du programme -->
+        <EditText
+            android:id="@+id/program_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom du programme">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/program_name_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Nom du programme"
+            android:background="@drawable/border_radius"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/program_description_layout"
+        <!-- Champ pour la description du programme -->
+        <EditText
+            android:id="@+id/program_description_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Description du programme">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/program_description_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Description du programme"
+            android:background="@drawable/border_radius"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/program_days_layout"
+        <!-- Champ pour les jours du programme -->
+        <EditText
+            android:id="@+id/program_days_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Jours du programme (ex: Lundi, Mardi)">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/program_days_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Jours du programme (ex: Lundi, Mardi)"
+            android:background="@drawable/border_radius"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
 
+        <!-- Bouton Enregistrer -->
         <Button
             android:id="@+id/btn_save_program"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="9dp"
-            android:backgroundTint="@color/black"
-            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@android:color/black"
             android:layout_gravity="end|center_vertical"
             android:text="Enregistrer le programme" />
 
-        <!-- RecyclerView ajouté pour afficher la liste des programmes -->
+        <!-- RecyclerView pour afficher la liste des programmes -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_programs"
             android:layout_width="match_parent"
@@ -61,5 +67,4 @@
             android:layout_marginTop="16dp" />
 
     </LinearLayout>
-
 </ScrollView>

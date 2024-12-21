@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/border_linearblanc"
+    android:gravity="center"
+    android:clipToPadding="false">
+
+    <!-- Nom du programme -->
+    <TextView
+        android:id="@+id/programmeNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Nom du Programme"
+        android:background="@drawable/border_radiustext"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:gravity="center" />
+
+    <!-- Description du programme -->
+    <TextView
+        android:id="@+id/programmeDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description du Programme"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:gravity="center" />
+
+    <!-- Liste des jours et exercices -->
+    <TextView
+        android:id="@+id/joursList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jours et Exercices"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:padding="15dp"
+        android:gravity="center"
+        android:background="@drawable/border_programme"
+        android:textColor="@color/white"
+        android:textIsSelectable="true" />
+
+</LinearLayout>

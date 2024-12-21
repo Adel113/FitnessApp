@@ -1,0 +1,102 @@
+{
+  "programmes": [
+    {
+      "nom": "programme_debutant",
+      "description": "Programme pour les débutants visant à développer force et endurance.",
+      "jours": [
+        {
+          "jour": "lundi",
+          "exercices": [
+            {"nom": "squat", "series": 3, "repetitions": 12},
+            {"nom": "pompes", "series": 3, "repetitions": 10},
+            {"nom": "planche abdominale", "series": 3, "duree": "30 secondes"}
+          ]
+        },
+        {
+          "jour": "mercredi",
+          "exercices": [
+            {"nom": "fentes", "series": 3, "repetitions": 10},
+            {"nom": "tractions assistées", "series": 3, "repetitions": 8},
+            {"nom": "gainage latéral", "series": 3, "duree": "20 secondes"}
+          ]
+        },
+        {
+          "jour": "vendredi",
+          "exercices": [
+            {"nom": "soulevé de terre", "series": 3, "repetitions": 10},
+            {"nom": "dips sur banc", "series": 3, "repetitions": 10},
+            {"nom": "crunchs", "series": 3, "repetitions": 15}
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "programme_intermediaire",
+      "description": "Programme pour les pratiquants intermédiaires voulant progresser en force et hypertrophie.",
+      "jours": [
+        {
+          "jour": "lundi",
+          "exercices": [
+            {"nom": "squat avec barre", "series": 4, "repetitions": 8},
+            {"nom": "développé couché", "series": 4, "repetitions": 6},
+            {"nom": "rowing barre", "series": 4, "repetitions": 8}
+          ]
+        },
+        {
+          "jour": "mercredi",
+          "exercices": [
+            {"nom": "presse à jambes", "series": 4, "repetitions": 10},
+            {"nom": "tractions", "series": 4, "repetitions": 8},
+            {"nom": "pompes diamant", "series": 4, "repetitions": 12}
+          ]
+        },
+        {
+          "jour": "vendredi",
+          "exercices": [
+            {"nom": "soulevé de terre roumain", "series": 4, "repetitions": 8},
+            {"nom": "développé militaire", "series": 4, "repetitions": 6},
+            {"nom": "crunchs obliques", "series": 4, "repetitions": 15}
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "programme_avance",
+      "description": "Programme avancé ciblant hypertrophie et force maximale.",
+      "jours": [
+        {
+          "jour": "lundi",
+          "exercices": [
+            {"nom": "squat avec barre", "series": 5, "repetitions": 5},
+            {"nom": "développé couché haltères", "series": 5, "repetitions": 6},
+            {"nom": "rowing haltères", "series": 5, "repetitions": 8}
+          ]
+        },
+        {
+          "jour": "mardi",
+          "exercices": [
+            {"nom": "presse à jambes", "series": 4, "repetitions": 8},
+            {"nom": "tractions lestées", "series": 4, "repetitions": 6},
+            {"nom": "dips lestés", "series": 4, "repetitions": 8}
+          ]
+        },
+        {
+          "jour": "jeudi",
+          "exercices": [
+            {"nom": "soulevé de terre", "series": 5, "repetitions": 5},
+            {"nom": "développé militaire", "series": 4, "repetitions": 6},
+            {"nom": "relevé de jambes suspendu", "series": 4, "repetitions": 12}
+          ]
+        },
+        {
+          "jour": "samedi",
+          "exercices": [
+            {"nom": "squat avant", "series": 4, "repetitions": 8},
+            {"nom": "pull-over haltère", "series": 4, "repetitions": 10},
+            {"nom": "gainage planche", "series": 4, "duree": "1 minute"}
+          ]
+        }
+      ]
+    }
+  ]
+}
