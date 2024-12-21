@@ -4,25 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import fr.adel.fitnessapp.R
 import com.google.android.material.button.MaterialButton
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.DocumentSnapshot
 import fr.adel.fitnessapp.adapters.ProgramAdapter
 import fr.adel.fitnessapp.models.Program
 
 class CreateProgramFragment : Fragment() {
 
-    private lateinit var programNameLayout: TextInputLayout
-    private lateinit var programDescriptionLayout: TextInputLayout
-    private lateinit var programDaysLayout: TextInputLayout
+    private lateinit var programNameLayout: EditText
+    private lateinit var programDescriptionLayout: EditText
+    private lateinit var programDaysLayout: EditText
     private lateinit var btnSaveProgram: MaterialButton
     private lateinit var recyclerViewPrograms: RecyclerView
 
@@ -37,9 +35,9 @@ class CreateProgramFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_create_program, container, false)
 
         // Initialisation des vues
-        programNameLayout = view.findViewById(R.id.program_name_layout)
-        programDescriptionLayout = view.findViewById(R.id.program_description_layout)
-        programDaysLayout = view.findViewById(R.id.program_days_layout)
+        programNameLayout = view.findViewById(R.id.program_name_input)
+        programDescriptionLayout = view.findViewById(R.id.program_description_input)
+        programDaysLayout = view.findViewById(R.id.program_days_input)
         btnSaveProgram = view.findViewById(R.id.btn_save_program)
         recyclerViewPrograms = view.findViewById(R.id.recycler_view_programs)
 
@@ -65,9 +63,9 @@ class CreateProgramFragment : Fragment() {
 
     private fun saveProgramToDatabase() {
         // Récupérer les données saisies
-        val programName = programNameLayout.editText?.text.toString()
-        val programDescription = programDescriptionLayout.editText?.text.toString()
-        val programDays = programDaysLayout.editText?.text.toString()
+        val programName = programNameLayout.text.toString()
+        val programDescription = programDescriptionLayout.text.toString()
+        val programDays = programDaysLayout.text.toString()
 
         // Valider les données
         if (programName.isEmpty()) {
@@ -129,8 +127,8 @@ class CreateProgramFragment : Fragment() {
     }
 
     private fun clearFields() {
-        programNameLayout.editText?.text?.clear()
-        programDescriptionLayout.editText?.text?.clear()
-        programDaysLayout.editText?.text?.clear()
+        programNameLayout.text?.clear()
+        programDescriptionLayout.text?.clear()
+        programDaysLayout.text?.clear()
     }
 }

@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#000000"> <!-- Fond noir -->
+    android:background="#FB7834"> <!-- Fond noir -->
 
     <LinearLayout
         android:layout_width="match_parent"

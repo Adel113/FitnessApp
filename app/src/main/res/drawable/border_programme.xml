@@ -2,7 +2,7 @@
 <!-- res/drawable/border_radius.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <solid android:color="#FB7834"/> <!-- Couleur de fond -->
-    <corners android:radius="100dp"/> <!-- Rayon des coins -->
-    /> <!-- Bordure -->
+    <solid android:color="#FB7834"/>
+    <corners android:radius="35dp"/>
+    />
 </shape>

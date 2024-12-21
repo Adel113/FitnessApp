@@ -1,5 +1,7 @@
 package fr.adel.fitnessapp.adapters
 
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,22 +38,49 @@ class ProgrammesAdapter(private val programmes: List<Programme>) :
             nomTextView.text = programme.nom
             descriptionTextView.text = programme.description
 
-            // Construire une chaîne avec les jours et exercices
-            val joursDetails = StringBuilder()
-            for (jour in programme.jours) {
-                joursDetails.append("Jour: ${jour.jour}\n")
-                for (exercice in jour.exercices) {
-                    joursDetails.append("  Exercice: ${exercice.nom}\n")
-                    joursDetails.append("" + "    Séries: ${exercice.series}," + "\n    Répétitions: ${exercice.repetitions}")
-                    if (exercice.duree != null) {
-                        joursDetails.append(",\n    Durée: ${exercice.duree}")
+            val joursDetails = SpannableStringBuilder()
+
+            for ((indexJour, jour) in programme.jours.withIndex()) {
+                // Titre du jour en gras
+                val jourTitle = "Jour ${indexJour + 1}: ${jour.jour}\n"
+                joursDetails.append(
+                    SpannableString(jourTitle).apply {
+                        setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, jourTitle.length, 0)
                     }
-                    joursDetails.append("\n")
+                )
+
+                if (jour.exercices.isNotEmpty()) {
+                    for ((indexExo, exercice) in jour.exercices.withIndex()) {
+                        // Exercice avec indentations
+                        val exerciceText = "   ${indexExo + 1}. Exercice: ${exercice.nom}\n"
+                        val seriesText = "      Séries: ${exercice.series}\n"
+                        val repetitionsText = "      Répétitions: ${exercice.repetitions}\n"
+                        val dureeText = exercice.duree?.let { "      Durée: ${it} min\n" } ?: ""
+
+                        joursDetails.append(
+                            SpannableString(exerciceText).apply {
+                                setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, exerciceText.length, 0)
+                            }
+                        )
+                        joursDetails.append(seriesText)
+                        joursDetails.append(repetitionsText)
+                        joursDetails.append(dureeText)
+                    }
+                } else {
+                    // Texte rouge si aucun exercice
+                    val noExerciceText = "   Aucun exercice pour ce jour.\n"
+                    joursDetails.append(
+                        SpannableString(noExerciceText).apply {
+                            setSpan(android.text.style.ForegroundColorSpan(android.graphics.Color.RED), 0, noExerciceText.length, 0)
+                        }
+                    )
                 }
-                joursDetails.append("\n")
+
+                joursDetails.append("\n") // Espacement entre les jours
             }
 
-            joursTextView.text = joursDetails.toString()
+            joursTextView.text = joursDetails
         }
+
     }
 }
